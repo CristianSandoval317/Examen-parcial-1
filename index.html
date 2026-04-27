@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer examen parcial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="principal">
+        <section class="controles">
+            <h1>Control articular de robot esférico</h1>
+            <p class="texto-principal">Esta interfaz web permite posicionar de forma instantanea
+                las articulaciones del robot y muetra la ubicación del efector final en el espacio
+                cartesiano.
+            </p>
+
+            <div>
+                <p class="indicacion">Usa los deslizadores o escribe el valor directamente. 
+                    Ambos controles funcionan de manera independiente. El robot responde en tiempo
+                    real a cada cambio.
+                </p>
+            </div>
+
+            <div class="slider">
+                <div class="encabezado-slider">
+                    <label for="rango-q1">Articulación Q1</label>
+                    <span class="texto-rango">-45° a 225°</span>
+                </div>
+                <div class="entradas">
+                    <input type="range" id="rango-q1" min="-45" max="225" value="0" step="1">
+                    <input type="number" id="numero-q1" min="-45" max="225" value="0" step="1">
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="encabezado-slider">
+                    <label for="rango-q2">Articulación Q2</label>
+                    <span class="texto-rango">0° a 125°</span>
+                </div>
+                <div class="entradas">
+                    <input type="range" id="rango-q2" min="0" max="125" value="0" step="1">
+                    <input type="number" id="numero-q2" min="0" max="125" value="0" step="1">
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="encabezado-slider">
+                    <label for="rango-q3">Articulación Q3</label>
+                    <span class="texto-rango">0 cm a 30 cm</span>
+                </div>
+                <div class="entradas">
+                    <input type="range" id="rango-q3" min="0" max="30" value="20" step="0.1">
+                    <input type="number" id="numero-q3" min="0" max="30" value="20" step="0.1">
+                </div>
+            </div>
+
+            <div class="botones">
+                <button id="boton-rest" class="restablecer" type="button">Restablecer posición inicial</button>
+            </div>
+
+            <div id="estatus" class="posicion-inicial">
+                La posición inicial es: q1 = 0°, q2 = 0° y q3 = 20 cm.
+            </div>
+        </section>
+
+        <section class="plano-3d">
+            <div class="titulo">
+                <h2>Plano cartesiano</h2>
+            </div>
+            <div id="plano-robot"></div>
+        </section>
+    </main>
+
+</body>
+<script type="module" src="./logica.js"></script>
+</html>
