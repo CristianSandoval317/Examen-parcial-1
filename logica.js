@@ -1,4 +1,4 @@
-import * as THREE from './node_modules/three/build/three.module.js'
+import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js'
 
 const rangoQ1 = document.getElementById('rango-q1');
 const numeroQ1 = document.getElementById('numero-q1');
